@@ -1,14 +1,15 @@
 var leds = require('rpi-ws2801');
 
-
 exports.demo = function(req, res) {
-    console.log('led request');
+
+    console.log('led demo request');
     var data = req.body;
     console.log(data);
 
     if (true === data.start) {
         console.log("-- random color animation --");
         console.log("send start=false to stop");
+
         leds.connect(32); // assign number of WS2801 LEDs
 
         var colorBuffer = new Buffer(leds.getChannelCount());
@@ -32,7 +33,6 @@ exports.demo = function(req, res) {
         leds.clear();
         leds.disconnect();
     }
-
     res.end();
 };
 
