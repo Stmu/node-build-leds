@@ -3,8 +3,9 @@ node-build-leds
 
 A node api to control ws2801 leds at raspberry pi
 
-fill:
-###json
+fill post request
+==============
+```json
 {
     "leds": 1,
     "isActive": false,
@@ -12,4 +13,6 @@ fill:
     "r": 0,
     "g": 0,
     "b": 0
- }
+}
+```
+
