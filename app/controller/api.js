@@ -4,10 +4,12 @@ exports.fill = function(req, res){
 
     console.log('led fill request');
     var data = req.body;
+    console.log(data);
 
-    leds.connect(32); // assign number of WS2801 LEDs
-    leds.fill(0x00, 255, 0xFF);
+    leds.connect(data.leds);
+    leds.fill(data.b, data.g, data.r);
 
+    res.end();
 };
 
 exports.demo = function(req, res) {
