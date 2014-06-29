@@ -1,5 +1,15 @@
 var leds = require('rpi-ws2801');
 
+exports.fill = function(req, res){
+
+    console.log('led fill request');
+    var data = req.body;
+
+    leds.connect(32); // assign number of WS2801 LEDs
+    leds.fill(0x00, 255, 0xFF);
+
+};
+
 exports.demo = function(req, res) {
 
     console.log('led demo request');

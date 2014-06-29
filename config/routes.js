@@ -7,7 +7,10 @@ module.exports = function(app) {
 
     app.get('/', routes);
 
+    // api requests
     app.post('/api/demo', api.demo);
+    app.post('/api/fill', api.fill);
+
     app.use('/api/', api.index);
 
     app.use('/users', users);
