@@ -7,9 +7,9 @@ fill post request
 ==============
 ```json
 {
-    "leds": 1,
-    "isActive": false,
-    "duration": 51,
+    "leds": 32,
+    "isActive": true,
+    "duration": 60,
     "r": 0,
     "g": 0,
     "b": 0
