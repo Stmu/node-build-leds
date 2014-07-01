@@ -42,6 +42,7 @@ exports.demo = function(req, res) {
             angle += animationTick;
         }, 5);
     } else {
+        leds.connect(32);
         leds.clear();
         leds.disconnect();
     }
