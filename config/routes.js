@@ -15,6 +15,7 @@ module.exports = function(app) {
     app.get('/api/red', api.red);
     app.get('/api/green', api.green);
     app.get('/api/black', api.black);
+    app.get('/api/yellow', api.yellow);
 
     app.use('/api/', api.index);
 

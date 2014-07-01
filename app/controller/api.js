@@ -56,6 +56,13 @@ exports.red = function(req, res){
     res.end();
 };
 
+exports.yellow = function(req, res){
+    leds.connect(32);
+    leds.fill(0, 255, 255);
+
+    res.end();
+};
+
 exports.green = function(req, res){
     leds.connect(32);
     leds.fill(0, 255, 0);
