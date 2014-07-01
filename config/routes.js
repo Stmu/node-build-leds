@@ -11,6 +11,11 @@ module.exports = function(app) {
     app.post('/api/demo', api.demo);
     app.post('/api/fill', api.fill);
 
+    // simple call fill all with on color
+    app.get('/api/red', api.red);
+    app.get('/api/green', api.green);
+    app.get('/api/black', api.black);
+
     app.use('/api/', api.index);
 
     app.use('/users', users);

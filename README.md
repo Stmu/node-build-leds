@@ -5,10 +5,11 @@ A node api to control ws2801 leds at raspberry pi
 
 fill post request
 ==============
-request:
+request data:
 
-http post: http://raspi.ip.address:3000/api/fill
-http header: Content-Type: application/json
+> http post: http://raspi.ip.address:3000/api/fill
+
+> http header: Content-Type: application/json
 
 ```json
 {
@@ -23,10 +24,11 @@ http header: Content-Type: application/json
 
 demo post request
 =============
-request:
+request data:
 
-http post: http://raspi.ip.address:3000/api/demo
-http header: Content-Type: application/json
+> http post: http://raspi.ip.address:3000/api/demo
+
+> http header: Content-Type: application/json
 
 ```json
 {

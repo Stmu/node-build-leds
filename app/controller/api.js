@@ -43,9 +43,31 @@ exports.demo = function(req, res) {
         }, 5);
     } else {
         leds.connect(32);
-        leds.clear();
+        leds.fill(0, 0, 0);
         leds.disconnect();
     }
+    res.end();
+};
+
+exports.red = function(req, res){
+    leds.connect(32);
+    leds.fill(0, 0, 255);
+
+    res.end();
+};
+
+exports.green = function(req, res){
+    leds.connect(32);
+    leds.fill(0, 255, 0);
+
+    res.end();
+};
+
+exports.black = function(req, res){
+    leds.connect(32);
+    leds.fill(0, 0, 0);
+    leds.disconnect();
+
     res.end();
 };
 
