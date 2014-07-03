@@ -9,7 +9,7 @@ exports.fill = function(req, res){
     leds.connect(data.leds);
     leds.fill(data.b, data.g, data.r);
 
-    setInterval(function () {
+    setTimeout(function () {
 
         leds.fill(0,0,0);
       
