@@ -12,8 +12,7 @@ exports.fill = function(req, res){
     setInterval(function () {
 
         leds.fill(0,0,0);
-        leds.disconnect();
-
+      
     }, data.duration);
 
     res.end();
