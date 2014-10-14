@@ -1,5 +1,22 @@
 var leds = require('rpi-ws2801');
 
+exports.range = function(req, res){
+    var data = req.body;
+    console.log(data);
+
+    leds.connect(data.leds);
+
+    for(var index = data.from; index < data.to; index ++){
+        leds.setColor(index, [data.b,data.g,data.r]);
+    }
+
+    setTimeout(function () {
+        leds.fill(0,0,0);
+    }, data.duration);
+
+    res.end();
+};
+
 exports.fill = function(req, res){
 
     console.log('led fill request');

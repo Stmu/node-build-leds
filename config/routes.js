@@ -10,6 +10,7 @@ module.exports = function(app) {
     // api requests
     app.post('/api/demo', api.demo);
     app.post('/api/fill', api.fill);
+    app.post('/api/range', api.range);
 
     // simple call fill all with on color
     app.get('/api/red', api.red);
