@@ -8,8 +8,9 @@ exports.range = function(req, res){
     leds.clear(); 
 
     for(var index = data.from; index <= data.to; index ++){
-        console.log("set led" +index + " to " + [data.rgb]);
-        leds.setRGB(index, data.rgb)
+        console.log("set led" +index + " to " + [data.b,data.g,data.r]);
+        leds.setColor(index, [data.b, data.g, data.r]);
+     
     }
    
     leds.update();
