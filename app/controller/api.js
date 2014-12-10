@@ -10,7 +10,10 @@ exports.range = function(req, res){
         console.log("set led" +index + " to " + [data.b,data.g,data.r]);
         leds.setColor(index, [data.b,data.g,data.r]);
     }
-
+   
+    // send all seted colors
+    leds.update();
+    
     setTimeout(function () {
         leds.fill(0,0,0);
     }, data.duration);
