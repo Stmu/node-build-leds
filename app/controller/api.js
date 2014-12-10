@@ -5,6 +5,7 @@ exports.range = function(req, res){
     console.log(data);
 
     leds.connect(data.leds);
+    leds.clear(); 
 
     for(var index = data.from; index <= data.to; index ++){
         console.log("set led" +index + " to " + [data.rgb]);
