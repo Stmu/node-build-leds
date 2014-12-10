@@ -38,6 +38,7 @@ request data:
 
 range
 =============
+fills a range of leds with given colors
 > http post: http://raspi.ip.address:3000/api/range
 
 > http header: Content-Type: application/json
