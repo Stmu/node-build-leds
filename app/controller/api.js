@@ -6,16 +6,17 @@ exports.range = function(req, res){
 
     leds.connect(data.leds);
 
-    for(var index = data.from; index < data.to; index ++){
+    for(var index = data.from; index <= data.to; index ++){
         console.log("set led" +index + " to " + [data.b,data.g,data.r]);
         leds.setColor(index, [data.b,data.g,data.r]);
     }
    
-    // send all seted colors
     leds.update();
     
     setTimeout(function () {
         leds.fill(0,0,0);
+        leds.clear(); 
+        leds.disconnect();
     }, data.duration);
 
     res.end();
