@@ -4,10 +4,9 @@ exports.range = function(req, res){
     var data = req.body;
     console.log(data);
 
-
     leds.connect(data.leds);
     leds.setColorIndex(2,1,0);
-    leds.clear(); 
+    leds.fill(0,0,0);
 
     for(var index = data.from; index <= data.to; index ++){
         console.log("set led" +index + " to '" + [data.rgb] + "'");
