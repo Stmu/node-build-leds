@@ -16,8 +16,11 @@ exports.range = function(req, res){
     leds.update();
     
     setTimeout(function () {
-        leds.fill(0,0,0);
-        leds.clear(); 
+        for(var index = data.from; index <= data.to; index ++){
+            leds.setRGB(index, '#000000')
+        }
+        leds.update();
+     
         leds.disconnect();
     }, data.duration);
 
