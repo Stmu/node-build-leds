@@ -4,8 +4,12 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var leds = require('rpi-ws2801');
+var config = require('./config/config');
 
 var app = express();
+ 
+configureConnectedLeds(leds, config.leds);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));
@@ -51,5 +55,20 @@ app.use(function(err, req, res, next) {
     });
 });
 
+function configureConnectedLeds(leds, ledConfig){
+    leds.connect(ledConfig.numLeds, ledConfig.spiDevice);
+    leds.setColorIndex(ledConfig.colorIndex.red, ledConfig.colorIndex.green, ledConfig.colorIndex.blue);
+}
 
 module.exports = app;
+
+function shutdown() {
+    console.log("disconnect leds")
+    
+    leds.clear();
+    leds.disconnect();
+
+    process.exit();
+}
+
+process.on('SIGINT', shutdown);

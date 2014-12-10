@@ -3,9 +3,7 @@ var leds = require('rpi-ws2801');
 exports.range = function(req, res){
     var data = req.body;
     console.log(data);
-
-    leds.connect(data.leds);
-    leds.setColorIndex(2,1,0);
+    
     leds.fill(0,0,0);
 
     for(var index = data.from; index <= data.to; index ++){
@@ -19,9 +17,9 @@ exports.range = function(req, res){
         for(var index = data.from; index <= data.to; index ++){
             leds.setRGB(index, '#000000')
         }
+
         leds.update();
-     
-        leds.disconnect();
+
     }, data.duration);
 
     res.end();
@@ -33,8 +31,7 @@ exports.fill = function(req, res){
     var data = req.body;
     console.log(data);
 
-    leds.connect(data.leds);
-    leds.fill(data.b, data.g, data.r);
+    leds.fill(data.r, data.g, data.b);
 
     setTimeout(function () {
 
@@ -55,8 +52,6 @@ exports.demo = function(req, res) {
         console.log("-- random color animation --");
         console.log("send start=false to stop");
 
-        leds.connect(32); // assign number of WS2801 LEDs
-
         var colorBuffer = new Buffer(leds.getChannelCount());
         var animationTick = 0.005;
         var angle = 0;
@@ -75,38 +70,31 @@ exports.demo = function(req, res) {
             angle += animationTick;
         }, 5);
     } else {
-        leds.connect(32);
         leds.fill(0, 0, 0);
-        leds.disconnect();
     }
     res.end();
 };
 
 exports.red = function(req, res){
-    leds.connect(32);
-    leds.fill(0, 0, 255);
+    leds.fill(255, 0, 0);
 
     res.end();
 };
 
 exports.yellow = function(req, res){
-    leds.connect(32);
-    leds.fill(0, 255, 255);
+    leds.fill(255, 255, 0);
 
     res.end();
 };
 
 exports.green = function(req, res){
-    leds.connect(32);
     leds.fill(0, 255, 0);
 
     res.end();
 };
 
 exports.black = function(req, res){
-    leds.connect(32);
     leds.fill(0, 0, 0);
-    leds.disconnect();
 
     res.end();
 };
