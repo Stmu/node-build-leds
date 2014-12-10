@@ -4,13 +4,14 @@ exports.range = function(req, res){
     var data = req.body;
     console.log(data);
 
+
     leds.connect(data.leds);
+    leds.setColorIndex(2,1,0);
     leds.clear(); 
 
     for(var index = data.from; index <= data.to; index ++){
-        console.log("set led" +index + " to " + [data.b,data.g,data.r]);
-        leds.setColor(index, [data.b, data.g, data.r]);
-     
+        console.log("set led" +index + " to '" + [data.rgb] + "'");
+        leds.setRGB(index, data.rgb)
     }
    
     leds.update();
