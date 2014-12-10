@@ -34,4 +34,22 @@ request data:
 {
     "start": true
 }
-```           
+```   
+
+range
+=============
+> http post: http://raspi.ip.address:3000/api/range
+
+> http header: Content-Type: application/json
+
+```json
+{
+    "leds": 32,
+    "from": 0,
+    "to": 32,
+    "r": 126,
+    "g": 166,
+    "b": 165,
+    "duration":5000
+}
+```
