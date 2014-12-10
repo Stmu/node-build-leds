@@ -1,8 +1,8 @@
 # node-build-leds
 
-A node application to control a ws2801 led stripe connected to a Raspberry Pi over http. Interfacing the RGB LED strip to the Raspberry Pi is super simple, requiring just a few connections between the board, strip and a DC power jack. [Adafruit][] has a very good example here [connection sample][]. 
+A node application to control a ws2801 led stripe connected to a Raspberry Pi over http. Interfacing the RGB LED strip to the Raspberry Pi is super simple, requiring just a few connections between the board, strip and a DC power jack. [Adafruit][] has a very good [example here][]. 
 
-[connection sample]: https://learn.adafruit.com/light-painting-with-raspberry-pi/hardware "Connection Sample"
+[example here]: https://learn.adafruit.com/light-painting-with-raspberry-pi/hardware "Connection Sample"
 [Adafruit]: https://learn.adafruit.com "Adafruit"
 
 ## Install and run
