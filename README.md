@@ -31,6 +31,12 @@ CONTENT-TYPE: application/json
 }
 ````
 
+Curl:
+
+````bash
+curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
+````
+
 ## Run a super duper cool demo
 
 Http-Request:
@@ -43,6 +49,12 @@ CONTENT-TYPE: application/json
 {
     "start": true
 }
+````
+
+Curl:
+
+````bash
+curl -X POST -H "Content-Type: application/json" -d "{\"start\": true}" http://rapi.address:3000/api/demo
 ````
 
 ## Stop the demo
@@ -59,6 +71,12 @@ CONTENT-TYPE: application/json
 }
 ````
 
+Curl:
+
+````bash
+curl -X POST -H "Content-Type: application/json" -d "{ \"start\": false}" http://rapi.address:3000/api/demo
+````
+
 ## Fill a range of the stripe
 
 fills a specific range of leds with given colors
@@ -72,8 +90,14 @@ CONTENT-TYPE: application/json
 
 {
     "from": 0,
-    "to": 32,
+    "to": 31,
     "rgb": "#FF00FF",
     "duration":5000
 }
+````
+
+Curl:
+
+````bash
+curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
 ````
