@@ -7,12 +7,12 @@ A node application to control a ws2801 led stripe connected to a Raspberry Pi ov
 
 ## Install and run
 
-````bash
-$ git clone https://github.com/Stmu/node-rpi-ws2801
-$ npm install
+```sh
+git clone https://github.com/Stmu/node-rpi-ws2801
+npm install
 
-$ node bin/www
-````
+node bin/www
+```
 
 ## Fill complete stripe with one post request
 
@@ -33,8 +33,8 @@ CONTENT-TYPE: application/json
 
 curl:
 
-````bash
-$ curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
+````sh
+curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
 ````
 
 ## Run a super duper cool demo
@@ -53,9 +53,9 @@ CONTENT-TYPE: application/json
 
 curl:
 
-````bash
-$ curl -X POST -H "Content-Type: application/json" -d "{\"start\": true}" http://rapi.address:3000/api/demo
-````
+```sh
+curl -X POST -H "Content-Type: application/json" -d "{\"start\": true}" http://rapi.address:3000/api/demo
+```
 
 ## Stop the demo
 
@@ -73,9 +73,9 @@ CONTENT-TYPE: application/json
 
 curl:
 
-````bash
-$ curl -X POST -H "Content-Type: application/json" -d "{ \"start\": false}" http://rapi.address:3000/api/demo
-````
+```sh
+curl -X POST -H "Content-Type: application/json" -d "{ \"start\": false}" http://rapi.address:3000/api/demo
+```
 
 ## Fill a range of the stripe
 
@@ -98,6 +98,6 @@ CONTENT-TYPE: application/json
 
 curl:
 
-````bash
+```sh
 $ curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
-````
+```
