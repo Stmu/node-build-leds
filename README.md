@@ -31,10 +31,10 @@ CONTENT-TYPE: application/json
 }
 ````
 
-Curl:
+curl:
 
 ````bash
-curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
+$ curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
 ````
 
 ## Run a super duper cool demo
@@ -51,10 +51,10 @@ CONTENT-TYPE: application/json
 }
 ````
 
-Curl:
+curl:
 
 ````bash
-curl -X POST -H "Content-Type: application/json" -d "{\"start\": true}" http://rapi.address:3000/api/demo
+$ curl -X POST -H "Content-Type: application/json" -d "{\"start\": true}" http://rapi.address:3000/api/demo
 ````
 
 ## Stop the demo
@@ -71,10 +71,10 @@ CONTENT-TYPE: application/json
 }
 ````
 
-Curl:
+curl:
 
 ````bash
-curl -X POST -H "Content-Type: application/json" -d "{ \"start\": false}" http://rapi.address:3000/api/demo
+$ curl -X POST -H "Content-Type: application/json" -d "{ \"start\": false}" http://rapi.address:3000/api/demo
 ````
 
 ## Fill a range of the stripe
@@ -96,8 +96,8 @@ CONTENT-TYPE: application/json
 }
 ````
 
-Curl:
+curl:
 
 ````bash
-curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
+$ curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
 ````
