@@ -99,5 +99,5 @@ CONTENT-TYPE: application/json
 curl:
 
 ```sh
-$ curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
+curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
 ```
