@@ -8,7 +8,7 @@ A node application to control a ws2801 led stripe connected to a Raspberry Pi ov
 ## Install and run
 
 ```sh
-git clone https://github.com/Stmu/node-rpi-ws2801
+git clone https://github.com/Stmu/node-build-leds.git
 npm install
 
 node bin/www
