@@ -1,5 +1,7 @@
+'use strict';
+
 module.exports = {
-    leds
+    leds:
     {
         colorIndex: {
             red: 2,
