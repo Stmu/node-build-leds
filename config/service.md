@@ -1,4 +1,5 @@
 <pre><code>
+#!upstart
 description "node-build-leds v0.1"
 author      "http://localhost"
 
