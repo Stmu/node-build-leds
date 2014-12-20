@@ -1,3 +1,6 @@
+# How to use
+sudo apt-get install upstart
+
 <pre><code>
 #!upstart
 description "node-build-leds v0.1"
