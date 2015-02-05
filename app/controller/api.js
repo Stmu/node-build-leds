@@ -1,4 +1,29 @@
 var leds = require('rpi-ws2801');
+var rgb = require("./rgbcolors");
+
+exports.ledFill = function(req, res){
+
+  var led = req.params.led;
+  var color = req.params.color;
+
+  console.log("set led " + led + " to color " + color);
+
+  var rgbColor = new rgb.RGBColor(color);
+  if (rgbColor.ok)
+  {
+    console.log("Parsed color R:" + rgbColor.r + " G:" + rgbColor.g + " B:" + rgbColor.b);
+
+    leds.setColor(led, [rgbColor.r,rgbColor.g,rgbColor.b]);
+    leds.update();
+  }
+  else
+  {
+    console.log("Failed to parse color '" + color + "'");
+  }
+
+  res.end();
+
+};
 
 exports.range = function(req, res){
     var data = req.body;
@@ -75,6 +100,11 @@ exports.demo = function(req, res) {
     res.end();
 };
 
+exports.orange = function(req, res){
+    leds.fill(220, 80,0);
+    res.end();
+};
+
 exports.red = function(req, res){
     leds.fill(255, 0, 0);
 
@@ -82,7 +112,7 @@ exports.red = function(req, res){
 };
 
 exports.yellow = function(req, res){
-    leds.fill(255, 255, 0);
+    leds.fill(220, 140, 0);
 
     res.end();
 };
@@ -96,6 +126,17 @@ exports.green = function(req, res){
 exports.black = function(req, res){
     leds.fill(0, 0, 0);
 
+    res.end();
+};
+
+exports.hotpink = function(req, res){
+    leds.fill(219,7,177);
+
+    res.end();
+};
+
+exports.blue = function(req, res){
+    leds.fill(0,0,255);
     res.end();
 };
 
