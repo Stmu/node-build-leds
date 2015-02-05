@@ -101,3 +101,17 @@ curl:
 ```sh
 curl -X POST -H "Content-Type: application/json" -d "{ \"from\": 0, \"to\": 31, \"rgb\": \"#FF00FF\", \"duration\": 1200000 }" http://rapi.address:3000/api/range
 ```
+
+## Color a specific led of the stripe
+
+Sets the given color name of a specific LED on the stripe.
+
+NUMBER: index of the LED (e.g. 0 to 31 if your stripe has 32 LEDs)
+COLOR: the name of the color. Supported color names are found in app/controller/rgbcolor.js
+
+curl sample call:
+
+```sh
+curl http://rapi.address:3000/led/<NUMBER>/fill/<COLOR>
+```
+
