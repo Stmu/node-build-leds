@@ -13,6 +13,7 @@ module.exports = function(app) {
     app.post('/api/range', api.range);
 
     app.get('/led/:led/fill/:color', api.ledFill);
+    app.get('/led/from/:start/to/:end/fill/:color', api.fillRange);
 
     // simple call fill all with on color
     app.get('/api/red', api.red);
