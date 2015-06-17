@@ -34,7 +34,7 @@ exports.fillRange = function(req, res) {
     console.log("Parsed color:" + rgbColor);
 
     for (var index = start; index <= end; index++) {
-      leds.setRGB(index, rgbColor)
+      leds.setRGB(index, rgbColor.toHex())
     }
 
     leds.update();
