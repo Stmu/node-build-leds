@@ -33,7 +33,7 @@ exports.fillRange = function(req, res) {
     console.log("Parsed color R:" + rgbColor.r + " G:" + rgbColor.g + " B:" + rgbColor.b);
 
     for (var index = start; index <= end; index++) {
-      leds.setRGB(index, [rgbColor.r, rgbColor.g, rgbColor.b])
+      leds.setColor(index, [rgbColor.r, rgbColor.g, rgbColor.b])
     }
 
     leds.update();
