@@ -31,6 +31,7 @@ exports.fillRange = function(req, res) {
   var rgbColor = new rgb.RGBColor(color);
   if (rgbColor.ok) {
     console.log("Parsed color R:" + rgbColor.r + " G:" + rgbColor.g + " B:" + rgbColor.b);
+    console.log("Parsed color:" + rgbColor);
 
     for (var index = start; index <= end; index++) {
       leds.setRGB(index, rgbColor)
