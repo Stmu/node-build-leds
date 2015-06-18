@@ -22,9 +22,9 @@ exports.ledFill = function(req, res) {
 };
 
 exports.fillRange = function(req, res) {
-  var start = req.params.start;
-  var end = req.params.end;
-  var color = req.params.color;
+  var start = parseInt(req.params('start'));
+  var end = parseInt(req.params('end'));
+  var color = req.params('color');
 
   console.log("set leds from " + start + " til " + end + " to color " + color);
 
