@@ -37,6 +37,12 @@ curl:
 curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
 ````
 
+## Fill a specific range
+````sh
+curl http://rapi.address:3000/fill/from/:start/to/:to/:color
+````
+
+
 ## Run a super duper cool demo
 
 Http-Request:
