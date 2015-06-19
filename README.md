@@ -41,7 +41,9 @@ curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"
 ````sh
 curl http://rapi.address:3000/fill/from/:start/to/:to/:color
 ````
-
+:start Start Pixel
+:to end pixel
+:color hex color (without hash e.g. F7f7ab) or color name like blue or yellow
 
 ## Run a super duper cool demo
 
