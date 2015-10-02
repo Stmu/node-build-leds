@@ -38,12 +38,25 @@ curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"
 ````
 
 ## Fill a specific range
-````sh
+
+```http-header
+GET /fill/from/:start/to/:to/:color HTTP/1.1
+HOST: raspi.address:3000
+
+``` 
+
+```sh
 curl http://rapi.address:3000/fill/from/:start/to/:to/:color
-````
-:start Start Pixel
-:to end pixel
-:color hex color (without hash e.g. F7f7ab) or color name like blue or yellow
+```
+* :start first pixel with color
+* :to last pixel with color
+* :color hex color (without hash e.g. F7f7ab) value or color name like blue or yellow are possible
+
+### Samplerequest
+```sh
+curl http://rapi.address:3000/fill/from/0/to/31/00FF00
+```
+
 
 ## Run a super duper cool demo
 
