@@ -19,13 +19,13 @@ node bin/www
 Http-Request:
 
 ```http-header
-GET /fill/from/:start/to/:to/:color HTTP/1.1
+GET /led/from/:start/to/:to/fill/:color HTTP/1.1
 HOST: raspi.address:3000
 
 ``` 
 
 ```sh
-curl http://rapi.address:3000/fill/from/:start/to/:to/:color
+curl http://rapi.address:3000/led/from/:start/to/:to/fill/:color
 ```
 * :start first pixel with color
 * :to last pixel with color
@@ -33,7 +33,7 @@ curl http://rapi.address:3000/fill/from/:start/to/:to/:color
 
 ### sample request
 ```sh
-curl http://rapi.address:3000/fill/from/0/to/31/00FF00
+curl http://rapi.address:3000/led/from/0/to/31/fill/00FF00
 ```
 
 
