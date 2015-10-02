@@ -14,6 +14,30 @@ npm install
 node bin/www
 ```
 
+## Fill a specific range
+
+Http-Request:
+
+```http-header
+GET /fill/from/:start/to/:to/:color HTTP/1.1
+HOST: raspi.address:3000
+
+``` 
+
+```sh
+curl http://rapi.address:3000/fill/from/:start/to/:to/:color
+```
+* :start first pixel with color
+* :to last pixel with color
+* :color hex color (without hash e.g. F7f7ab) value or color name like blue or yellow are possible
+
+### sample request
+```sh
+curl http://rapi.address:3000/fill/from/0/to/31/00FF00
+```
+
+
+
 ## Fill complete stripe with one post request
 
 Http-Request:
@@ -36,26 +60,6 @@ curl:
 ````sh
 curl -X POST -H "Content-Type: application/json" -d "{ \"duration\": 1200000, \"r\": 0, \"g\": 127, \"b\": 127 }" http://rapi.address:3000/api/fill
 ````
-
-## Fill a specific range
-
-```http-header
-GET /fill/from/:start/to/:to/:color HTTP/1.1
-HOST: raspi.address:3000
-
-``` 
-
-```sh
-curl http://rapi.address:3000/fill/from/:start/to/:to/:color
-```
-* :start first pixel with color
-* :to last pixel with color
-* :color hex color (without hash e.g. F7f7ab) value or color name like blue or yellow are possible
-
-### Samplerequest
-```sh
-curl http://rapi.address:3000/fill/from/0/to/31/00FF00
-```
 
 
 ## Run a super duper cool demo
