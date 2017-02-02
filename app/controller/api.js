@@ -87,7 +87,7 @@ exports.fill = function(req, res) {
   res.end();
 };
 
-const intervallId;
+var intervallId;
 
 exports.demo = function(req, res) {
 
@@ -103,6 +103,7 @@ exports.demo = function(req, res) {
     var angle = 0;
     var ledDistance = 0.6;
     intervallId =  setInterval(function() {
+      console.log(intervallId);
       angle = (angle < Math.PI * 2) ? angle : angle - Math.PI * 2;
       for (var i = 0; i < colorBuffer.length; i += 3) {
         //red
@@ -116,7 +117,7 @@ exports.demo = function(req, res) {
       angle += animationTick;
     }, 5);
   } else {
-    
+    console.log(intervallId);
     clearInterval(intervallId);
     leds.fill(0, 0, 0);
   }
