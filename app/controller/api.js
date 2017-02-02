@@ -87,14 +87,14 @@ exports.fill = function(req, res) {
   res.end();
 };
 
-var intervallId;
+var intervallId = undefined;
 
 exports.demo = function(req, res) {
 
   console.log('led demo request');
   var data = req.body;
   console.log(data);
-  if (true === data.start) {
+  if (true === data.start && intervallId == undefined) {
     console.log("-- random color animation --");
     console.log("send start=false to stop");
 
@@ -119,6 +119,7 @@ exports.demo = function(req, res) {
   } else {
     console.log(intervallId);
     clearInterval(intervallId);
+    intervallId = undefined;
     leds.fill(0, 0, 0);
   }
   res.end();
