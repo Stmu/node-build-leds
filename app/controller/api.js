@@ -97,7 +97,7 @@ exports.demo = function (req, res) {
   if (true === data.start) {
     console.log("-- random color animation --");
     console.log("send start=false to stop");
-    if (intervallId != undefined) {
+    if (intervallId == undefined) {
       var colorBuffer = new Buffer(leds.getChannelCount());
       var animationTick = 0.005;
       var angle = 0;
